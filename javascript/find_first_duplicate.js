@@ -1,5 +1,29 @@
 function findFirstDuplicate(arr) {
   // type your code here
+  
+  // let counter = 0
+  // for(let i = 0; i < arr.length; i++) {
+  //   if (arr[i]===arr[i+1]) {
+  //     counter = i+1
+  //   }
+  // }
+  // if (arr[0] === arr[1] && arr.length === 2){
+  //   return 2
+  // }
+  // return counter === 0 ? -1 : counter
+
+  let counter = 0
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]===arr[i-1]) {
+      break
+    } else {
+      counter++
+    }
+  }
+  if (arr[0] === arr[1] && arr.length === 2) {
+    return 2
+  }
+  return counter === arr.length ? -1 : counter
 }
 
 if (require.main === module) {
